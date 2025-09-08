@@ -185,9 +185,3 @@ PORT=5001
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-***
-
-**Built with ❤️ by [Your Name]**
-
-*This application demonstrates full-stack development skills with modern technologies, AI integration, and production-ready architecture.*
