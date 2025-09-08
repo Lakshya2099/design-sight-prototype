@@ -1,0 +1,34 @@
+.feedback-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicks to pass through to the image if needed */
+}
+
+.feedback-box {
+  position: absolute;
+  border: 2px solid;
+  box-sizing: border-box;
+  pointer-events: all; /* Makes the box itself clickable */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.feedback-box.severity-high {
+  border-color: #ff4d4d;
+  background-color: rgba(255, 77, 77, 0.2);
+}
+.feedback-box.severity-medium {
+  border-color: #ffa500;
+  background-color: rgba(255, 165, 0, 0.2);
+}
+.feedback-box.severity-low {
+  border-color: #3cb371;
+  background-color: rgba(60, 179, 113, 0.2);
+}
+
+.feedback-box:hover, .feedback-box.active {
+  background-color: rgba(100, 108, 255, 0.4);
+}

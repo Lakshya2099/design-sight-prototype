@@ -1,0 +1,120 @@
+:root {
+  --background-color: #1a1a1a;
+  --sidebar-bg: #242424;
+  --text-color: #f0f0f0;
+  --primary-color: #646cff;
+  --border-color: #444;
+  --severity-high: rgba(255, 77, 77, 0.7);
+  --severity-medium: rgba(255, 165, 0, 0.7);
+  --severity-low: rgba(60, 179, 113, 0.7);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.project-view {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--sidebar-bg);
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.image-container {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: relative;
+  overflow: auto;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.loader {
+  position: absolute;
+  color: white;
+  background-color: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: var(--sidebar-bg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  min-width: 350px;
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+button, input[type="file"] {
+  padding: 10px 15px;
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feedback-summary {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.feedback-summary:hover, .feedback-summary.active {
+  background-color: #333;
+  border-left: 3px solid var(--primary-color);
+}
