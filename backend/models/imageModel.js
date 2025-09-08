@@ -34,7 +34,7 @@ const imageSchema = new mongoose.Schema({
   analysisStatus: { type: String, enum: ['pending', 'processing', 'completed', 'failed'], default: 'pending' },
 }, { timestamps: true });
 
-// This is the fix: check if the model already exists before creating it.
+
 export const Comment = mongoose.models.Comment || mongoose.model('Comment', commentSchema);
 const Image = mongoose.models.Image || mongoose.model('Image', imageSchema);
 

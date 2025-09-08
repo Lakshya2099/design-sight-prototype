@@ -6,7 +6,7 @@ import { uploadImage, getImageDetails, triggerAIAnalysis } from '../controllers/
 
 const router = express.Router();
 
-// Ensure uploads directory exists
+
 const uploadsDir = './uploads/';
 if (!fs.existsSync(uploadsDir)) {
     fs.mkdirSync(uploadsDir, { recursive: true });
@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 const upload = multer({ 
     storage: storage,
     fileFilter: (req, file, cb) => {
-        // Accept images only
+        
         if (file.mimetype.startsWith('image/')) {
             cb(null, true);
         } else {
@@ -30,7 +30,7 @@ const upload = multer({
         }
     },
     limits: {
-        fileSize: 5 * 1024 * 1024, // 5MB limit
+        fileSize: 5 * 1024 * 1024, 
     }
 });
 

@@ -11,13 +11,13 @@ export const uploadImage = async (req, res) => {
             return res.status(400).json({ message: 'File is required.' });
         }
 
-        // Auto-create default project if projectId is provided but doesn't exist
+
         if (projectId) {
             let project = await Project.findById(projectId);
             if (!project) {
                 console.log(`Project ${projectId} not found, creating it...`);
                 
-                // Auto-create the project
+                
                 project = new Project({
                     _id: projectId,
                     name: 'Demo Project',
@@ -49,7 +49,7 @@ export const uploadImage = async (req, res) => {
 
         await newImage.save();
         
-        // Add image to project if project exists
+        
         if (projectId) {
             const project = await Project.findById(projectId);
             project.images.push(newImage._id);

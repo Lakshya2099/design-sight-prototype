@@ -16,7 +16,6 @@ const ProjectView = () => {
   
   const projectId = '68bc6841039577f548b75d4f';
 
-  // Initialize project when component mounts
   useEffect(() => {
     const initializeProject = async () => {
       try {
@@ -53,7 +52,7 @@ const ProjectView = () => {
     setLoading(true);
     try {
       await axios.post(`${API_URL}/api/images/${selectedImage._id}/analyze`);
-      // Start polling for analysis completion
+      
       const interval = setInterval(async () => {
         const res = await axios.get(`${API_URL}/api/images/${selectedImage._id}`);
         if (res.data.analysisStatus === 'completed') {
@@ -64,7 +63,7 @@ const ProjectView = () => {
           setLoading(false);
           alert('Analysis failed. Please check backend logs.');
         }
-      }, 5000); // Poll every 5 seconds
+      }, 5000); 
     } catch (error) {
       console.error("Error starting analysis:", error);
       setLoading(false);

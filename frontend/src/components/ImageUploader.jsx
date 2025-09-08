@@ -17,13 +17,12 @@ const ImageUploader = ({ projectId, onUploadSuccess }) => {
       return;
     }
 
-    // Make projectId optional since your backend now handles it
     if (!projectId) {
       console.warn('No projectId provided, uploading without project association');
     }
 
     const formData = new FormData();
-    formData.append('image', file); // Changed from 'designImage' to 'image'
+    formData.append('image', file); 
     if (projectId) {
       formData.append('projectId', projectId);
     }

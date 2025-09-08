@@ -4,7 +4,6 @@ export const createDefaultProject = async (req, res) => {
   try {
     const projectId = '68bc6841039577f548b75d4f';
     
-    // Check if project already exists
     const existingProject = await Project.findById(projectId);
     if (existingProject) {
       return res.json({
@@ -14,7 +13,6 @@ export const createDefaultProject = async (req, res) => {
       });
     }
 
-    // Create new project with the specific ID
     const newProject = new Project({
       _id: projectId,
       name: 'Demo Project',

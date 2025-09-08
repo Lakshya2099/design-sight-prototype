@@ -3,13 +3,9 @@ import { createDefaultProject, getProject, getAllProjects } from '../controllers
 
 const router = express.Router();
 
-// Auto-create default project route
 router.post('/create-default', createDefaultProject);
-
-// Get specific project
 router.get('/:id', getProject);
-
-// Get all projects
+s
 router.get('/', getAllProjects);
 
 export default router;
